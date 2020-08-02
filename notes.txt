@@ -29,6 +29,8 @@
     npm install body-parser
     --------------------------
 
+    for req.body to work
+
 
  =====================
     MONGO
