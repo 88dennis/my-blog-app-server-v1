@@ -4,7 +4,10 @@ const myModuleBlogSeed = require('./blogSeed'); //./blogSeed.js
 import { MongoClient } from 'mongodb';
 const app = express();
 let PORT = 8000;
+import path from 'path';
 
+
+app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
 
 //FAKE DATABASE FOR TESTING 
@@ -243,6 +246,12 @@ async function  seedBlogDb() {
     }
 }; 
 
+
+//THIS APP.GET SHOULD BE IN THE END
+app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+});
+
 app.listen(PORT, function () {
     console.log("Connected to PORT " + "http://localhost:" + PORT)
-})
+});

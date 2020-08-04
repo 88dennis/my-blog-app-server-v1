@@ -56,3 +56,28 @@ in the index.js file of your front-end: import 'whatwg-fetch;
 add to package json    "proxy": "http://localhost:8000",
 restart your frontend when altering package.json
 --------------------------------------------------------------------------
+
+
+
+=======================
+DEPLOYMENT
+=========================
+go to index.html change the title
+
+go to manifest.json change the short name
+
+in client folder go to terminal npm run build
+
+copy build and paste to src folder of server
+
+
+
+import path from 'path;
+
+app.use(express.static(path.join(__dirname, '/build')));
+
+
+and at the end before the port:
+app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+})
