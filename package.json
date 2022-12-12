@@ -20,7 +20,7 @@
     "homepage": "https://github.com/88dennis/my-blog-app-server-v1#readme",
     "dependencies": {
         "body-parser": "^1.19.0",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "mongodb": "^3.5.7",
         "whatwg-fetch": "^3.0.0"
     },
